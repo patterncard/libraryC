@@ -1,0 +1,9 @@
+    int *k[3];
+    char *books[3];
+    printf("Introduce 3 books");
+    scanf("books: %d \n", k[3]);
+    for(int i = 0; i <= 3; i++){
+        books[i] = "next one";
+        printf("books[i]");
+    }
+    return 0;
