@@ -1,11 +1,20 @@
 #include <stdio.h>
+#include <curses.h>
+#define PLIK "plik.txt"
 int main(){
-    int books[3];
-    printf("Introduce 3 books");
-    for(int i = 0; i <= 3; i++){
-        scanf("%d", &books[3]);
-        books[i] = 0;
-        printf("%d", books[i]);
-    }
-    return 0;
+    FILE *pliczek;
+    int book;
+    int user;
+
+    printf("Introduce title of book ");
+    scanf("%d", &book);
+    printf("Introduce user ");
+    scanf("%d", &user);
+
+    pliczek = fopen(PLIK, "w");
+    fprintf(pliczek, "%d\n%d", book, user);
+
+    fclose(pliczek);
+    getch();
+return 0;
 }
