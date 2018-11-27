@@ -1,20 +1,19 @@
 #include <stdio.h>
-#include <curses.h>
 #define PLIK "plik.txt"
 int main(){
     FILE *pliczek;
-    int book;
-    int user;
+    char book;
+    char user;
 
     printf("Introduce title of book ");
-    scanf("%d", &book);
+    scanf("%s", &book);
     printf("Introduce user ");
-    scanf("%d", &user);
+    scanf("%s", &user);
 
     pliczek = fopen(PLIK, "w");
-    fprintf(pliczek, "%d\n%d", book, user);
+    fprintf(pliczek, "%s\n%s", book, user);
 
     fclose(pliczek);
-    getch();
+    getc(pliczek);
 return 0;
 }
